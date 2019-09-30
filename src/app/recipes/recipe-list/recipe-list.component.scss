@@ -1,0 +1,11 @@
+.custom-card {
+  text-decoration: none;
+  &__title {
+    color: black;
+    text-decoration: none;
+  }
+
+  &__text {
+    color: #63616f;
+  }
+}
