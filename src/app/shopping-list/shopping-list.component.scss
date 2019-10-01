@@ -1,0 +1,9 @@
+.ingrediente {
+  &__item {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      background: #b5b3c2;
+    }
+  }
+}
