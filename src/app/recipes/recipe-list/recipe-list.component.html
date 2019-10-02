@@ -5,19 +5,9 @@
 </div>
 <div class="row mt-3">
   <div class="col-12">
-    <a href="#" class="card mb-3 custom-card" *ngFor="let receta of recetas">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img [src]=" receta.image " class="card-img" alt="{{ receta.nombre }}">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title custom-card__title">{{ receta.nombre }}</h5>
-            <p class="card-text custom-card__text">{{ receta.descripcion }}</p>
-          </div>
-        </div>
-      </div>
-    </a>
-<!--    <app-recipe-item></app-recipe-item>-->
+    <app-recipe-item
+      *ngFor="let recetaEl of recetas"
+      [recipe]="recetaEl"
+      (recipeSelected)="onRecipeSelected(recetaEl)"></app-recipe-item>
   </div>
 </div>

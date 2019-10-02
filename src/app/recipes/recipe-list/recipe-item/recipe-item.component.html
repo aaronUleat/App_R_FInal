@@ -1,1 +1,13 @@
-<p>recipe-item works!</p>
+<a href="#" class="card mb-3 custom-card" (click)="onSelected()">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img [src]="recipe.image" class="card-img" alt="{{ recipe.nombre }}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title custom-card__title">{{ recipe.nombre }}</h5>
+        <p class="card-text custom-card__text">{{ recipe.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</a>

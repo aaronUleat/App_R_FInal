@@ -2,7 +2,29 @@
   <div class="col-12">
     <form>
       <div class="row">
-
+        <form>
+          <div class="row">
+            <div class="col-12 col-sm-8">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="form-control" #nameInput>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+               <div class="form-group">
+                 <label for="unidades">Unidades: </label>
+                 <input type="number" class="form-control" name="unidades" #amountInput>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-outline-success" type="button" (click)="agregarItem()">Agregar</button>
+              <button class="btn btn-outline-danger ml-2" type="button">Remover</button>
+              <button class="btn btn-outline-warning ml-2" type="button">Limpiar</button>
+            </div>
+          </div>
+        </form>
       </div>
     </form>
   </div>

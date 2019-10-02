@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row recipe-detail">
   <div class="col-12">
-    <img src="" alt="" class="img-fluid">
+    <img src="{{recipe.image}}" alt="" class="img-fluid recipe-detail__img">
   </div>
 </div>
 <div class="row">
   <div class="col-12">
-    <h2>Nombre de La Receta</h2>
+    <h2> {{ recipe.nombre }} </h2>
   </div>
 </div>
 <div class="row">
@@ -24,7 +24,7 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <p> Descripcion de la Receta</p>
+    <p> {{recipe.descripcion}}</p>
   </div>
 </div>
 <div class="row">
