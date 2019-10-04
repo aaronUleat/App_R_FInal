@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Receta} from '../recipe.model';
+import {RecipeService} from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,21 +9,12 @@ import {Receta} from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   @Output() recipeWasSelected = new EventEmitter<Receta>();
-  recetas: Receta[] = [
-    new Receta(
-      'Hummus',
-      `En árabe, hummus significa simplemente garbanzo.`,
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Houmous.jpg/300px-Houmous.jpg'
-    ),
-    new Receta(
-      `Carpaccio de solomillo de ternera fácil`,
-      ` Plato típico de la cocina italiana elaborado a base de láminas muy finas de carne o pescado crudo`,
-      `https://www.codigococina.com/wp-content/uploads/2016/12/como_hacer_carpaccio.jpg`
-    )
-  ];
-  constructor() { }
+  recipes: Receta[];
+  constructor( private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
+    console.log(this.recipes);
   }
   onRecipeSelected(recipe: Receta) {
     this.recipeWasSelected.emit(recipe);

@@ -10,11 +10,11 @@
 </div>
 <div class="row">
   <div class="col-12">
-    <div class="dropdown">
+    <div class="dropdown" appDropdown #r="appDropDown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Administrar Receta
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu" [ngClass]="{'show':r.isOpen}" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Ir a lista de Ingredientes</a>
         <a class="dropdown-item" href="#">Editar Receta</a>
         <a class="dropdown-item" href="#">Eliminar Receta</a>

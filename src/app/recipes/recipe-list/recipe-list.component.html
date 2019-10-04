@@ -6,7 +6,7 @@
 <div class="row mt-3">
   <div class="col-12">
     <app-recipe-item
-      *ngFor="let recetaEl of recetas"
+      *ngFor="let recetaEl of recipes"
       [recipe]="recetaEl"
       (recipeSelected)="onRecipeSelected(recetaEl)"></app-recipe-item>
   </div>
