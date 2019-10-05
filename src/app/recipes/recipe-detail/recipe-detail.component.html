@@ -15,7 +15,7 @@
         Administrar Receta
       </button>
       <div class="dropdown-menu" [ngClass]="{'show':r.isOpen}" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Ir a lista de Ingredientes</a>
+        <a class="dropdown-item" (click)="onAddToShoppingList()" style="cursor: pointer">Enviar ingredientes a lista de Ingredientes</a>
         <a class="dropdown-item" href="#">Editar Receta</a>
         <a class="dropdown-item" href="#">Eliminar Receta</a>
       </div>
@@ -29,6 +29,8 @@
 </div>
 <div class="row">
   <div class="col-12">
-    Ingredientes
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients" > {{ingredient.name}} - ( {{ingredient.amount}} ) </li>
+    </ul>
   </div>
 </div>
