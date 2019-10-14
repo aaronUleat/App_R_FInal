@@ -2,24 +2,35 @@
   <div class="col-12">
     <form>
       <div class="row">
-        <form>
+        <form (ngSubmit)="agregarItem(f)" #f="ngForm">
           <div class="row">
             <div class="col-12 col-sm-8">
               <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" class="form-control" #nameInput>
+                <input type="text" id="nombre" class="form-control"
+                name="name"
+                ngModel
+                required
+                >
               </div>
             </div>
             <div class="col-12 col-sm-4">
                <div class="form-group">
                  <label for="unidades">Unidades: </label>
-                 <input type="number" class="form-control" name="unidades" #amountInput>
+                 <input type="number" class="form-control" id="unidades"
+                  name="amount"
+                  ngModel
+                  required
+                  [pattern]=" '^[1-9]+[0-9]*$' "
+                 >
                </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <button class="btn btn-outline-success" type="button" (click)="agregarItem()">Agregar</button>
+              <button class="btn btn-outline-success"
+                      type="submit"
+                      [disabled]=" !f.valid " >{{ editMode ? 'Actualizar' : 'Agregar'  }}</button>
               <button class="btn btn-outline-danger ml-2" type="button">Remover</button>
               <button class="btn btn-outline-warning ml-2" type="button">Limpiar</button>
             </div>
