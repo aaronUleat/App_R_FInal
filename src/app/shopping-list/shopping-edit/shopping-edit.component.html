@@ -2,7 +2,7 @@
   <div class="col-12">
     <form>
       <div class="row">
-        <form (ngSubmit)="agregarItem(f)" #f="ngForm">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
           <div class="row">
             <div class="col-12 col-sm-8">
               <div class="form-group">
@@ -31,8 +31,13 @@
               <button class="btn btn-outline-success"
                       type="submit"
                       [disabled]=" !f.valid " >{{ editMode ? 'Actualizar' : 'Agregar'  }}</button>
-              <button class="btn btn-outline-danger ml-2" type="button">Remover</button>
-              <button class="btn btn-outline-warning ml-2" type="button">Limpiar</button>
+              <button class="btn btn-outline-danger ml-2"
+                      type="button"
+                      (click)="onDelete()"
+                      *ngIf="editMode">Remover</button>
+              <button class="btn btn-outline-warning ml-2"
+                      type="button"
+                      (click)="onClear()">Limpiar</button>
             </div>
           </div>
         </form>
