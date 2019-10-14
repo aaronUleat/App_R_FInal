@@ -17,7 +17,7 @@
       <div class="dropdown-menu" [ngClass]="{'show':r.isOpen}" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" (click)="onAddToShoppingList()" style="cursor: pointer">Enviar ingredientes a lista de Ingredientes</a>
         <a class="dropdown-item" style="cursor: pointer" (click)="onEditRecipe()">Editar Receta</a>
-        <a class="dropdown-item" style="cursor: pointer;">Eliminar Receta</a>
+        <a class="dropdown-item" style="cursor: pointer;" (click)="onDeleteRecipe()">Eliminar Receta</a>
       </div>
     </div>
   </div>
