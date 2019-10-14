@@ -13,16 +13,13 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list" >Lista de compras</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" (click)="onSaveData()" >Salvar Datos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" (click)="onFetchData()" >Extraer Datos</a>
+      </li>
     </ul>
 
-    <div class="dropdown float-right">
-      <a class="nav-link dropdown-toggle" appDropdown #r="appDropDown" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Administrar Recetas
-      </a>
-      <div class="dropdown-menu" [ngClass]="{'show':r.isOpen}" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" style="cursor: pointer;">Salvar Datos</a>
-        <a class="dropdown-item" style="cursor: pointer;">Extraer Datos</a>
-      </div>
-    </div>
   </div>
 </nav>
