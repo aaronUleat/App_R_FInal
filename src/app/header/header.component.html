@@ -7,20 +7,23 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLinkActive="active"  routerLink="/recipes" >Recetas <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isAuthenticated">
         <a class="nav-link" routerLinkActive="active"  routerLink="/auth" >Autenticar </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list" >Lista de compras</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" style="cursor: pointer;" (click)="onSaveData()" >Salvar Datos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="cursor: pointer;" (click)="onFetchData()" >Extraer Datos</a>
+        <a class="nav-link" *ngIf="isAuthenticated" style="cursor: pointer;" (click)="onFetchData()" >Extraer Datos</a>
+      </li>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" style="cursor: pointer;" (click)="onLogout()" >Log Out</a>
       </li>
     </ul>
 
